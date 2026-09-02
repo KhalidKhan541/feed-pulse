@@ -1,0 +1,1 @@
+chrome.runtime.onMessage.addListener((msg, s, resp) => { if(msg.action === 'getFeeds') { const feeds = [...document.querySelectorAll('link[type*=rss], link[type*=atom]')].map(l => ({title: l.title, href: l.href})); resp({feeds}); } });
